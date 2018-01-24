@@ -22,10 +22,11 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:focusableInTouchMode="true"
+            android:focusable="true"
             android:orientation="horizontal">
 
             <LinearLayout
+                android:id="@+id/group_bond"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="2"
@@ -57,7 +58,7 @@
             </LinearLayout>
 
             <Button
-                android:id="@+id/show_answer_1"
+                android:id="@+id/show_answer_bond"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_vertical"
@@ -68,52 +69,53 @@
 
         </LinearLayout>
         <TextView
-            android:id="@+id/question_5"
+            android:id="@+id/whisky_question"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/question_5_text" />
+            android:text="@string/whisky_question_text" />
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal">
 
             <RadioGroup
+                android:id="@+id/group_whisky"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="2">
 
                 <RadioButton
-                    android:id="@+id/check_5a"
+                    android:id="@+id/radio_poland"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@string/answer_5_a" />
+                    android:text="@string/whisky_answer_1" />
 
                 <RadioButton
-                    android:id="@+id/check_5b"
+                    android:id="@+id/radio_sweden"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@string/answer_5_b" />
+                    android:text="@string/whisky_answer_2" />
 
                 <RadioButton
-                    android:id="@+id/check_5c"
+                    android:id="@+id/radio_scotland"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@string/answer_5_c" />
+                    android:text="@string/whisky_answer_3" />
 
                 <RadioButton
-                    android:id="@+id/check_5d"
+                    android:id="@+id/radio_japan"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@string/answer_5_d" />
+                    android:text="@string/whisky_answer_4" />
                 <RadioButton
-                    android:id="@+id/check_5e"
+                    android:id="@+id/radio_all_countries"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@string/answer_5_e" />
+                    android:text="@string/whisky_answer_5" />
             </RadioGroup>
 
             <Button
-                android:id="@+id/show_answer_5"
+                android:id="@+id/show_answer_whisky"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_vertical"
@@ -125,10 +127,10 @@
 
 
         <TextView
-            android:id="@+id/question_3"
+            android:id="@+id/gin_question"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/question_3_text" />
+            android:text="@string/gin_question_text" />
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -136,6 +138,7 @@
             android:orientation="horizontal">
 
             <EditText
+                android:focusable="true"
                 android:id="@+id/spirit_name"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
@@ -143,7 +146,7 @@
                 android:hint="@string/question_hint" />
 
             <Button
-                android:id="@+id/show_answer_3"
+                android:id="@+id/show_answer_gin"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_vertical"
@@ -153,49 +156,49 @@
                 android:visibility="invisible" />
         </LinearLayout>
         <TextView
-            android:id="@+id/question_4"
+            android:id="@+id/pisco_question"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/question_4_text" />
+            android:text="@string/pisco_question_text" />
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:focusableInTouchMode="true"
             android:orientation="horizontal">
 
             <LinearLayout
+                android:id="@+id/group_pisco"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="2"
                 android:orientation="vertical">
 
                 <CheckBox
-                    android:id="@+id/check_4a"
+                    android:id="@+id/check_chile"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@string/answer_4_a" />
+                    android:text="@string/pisco_answer_1" />
 
                 <CheckBox
-                    android:id="@+id/check_4b"
+                    android:id="@+id/check_bolivia"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@string/answer_4_b" />
+                    android:text="@string/pisco_answer_2" />
 
                 <CheckBox
-                    android:id="@+id/check_4c"
+                    android:id="@+id/check_brazil"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@string/answer_4_c" />
+                    android:text="@string/pisco_answer_3" />
 
                 <CheckBox
-                    android:id="@+id/check_4d"
+                    android:id="@+id/check_peru"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@string/answer_4_d" />
+                    android:text="@string/pisco_answer_4" />
             </LinearLayout>
 
             <Button
-                android:id="@+id/show_answer_4"
+                android:id="@+id/show_answer_pisco"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_vertical"
@@ -207,10 +210,10 @@
         </LinearLayout>
 
         <TextView
-            android:id="@+id/question_2"
+            android:id="@+id/rum_question"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/question_2_text" />
+            android:text="@string/rum_question_text" />
 
         <!-- Radio layout -->
         <LinearLayout
@@ -219,37 +222,38 @@
             android:orientation="horizontal">
 
             <RadioGroup
+                android:id="@+id/group_rum"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="2">
 
                 <RadioButton
-                    android:id="@+id/check_potatoes"
+                    android:id="@+id/radio_potatoes"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@string/answer_2_a" />
+                    android:text="@string/rum_answer_1" />
 
                 <RadioButton
-                    android:id="@+id/check_wheat"
+                    android:id="@+id/radio_wheat"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@string/answer_2_b" />
+                    android:text="@string/rum_answer_2" />
 
                 <RadioButton
-                    android:id="@+id/check_cane"
+                    android:id="@+id/radio_cane"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@string/answer_2_c" />
+                    android:text="@string/rum_answer_3" />
 
                 <RadioButton
-                    android:id="@+id/check_coconut"
+                    android:id="@+id/radio_coconut"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@string/answer_2_d" />
+                    android:text="@string/rum_answer_4" />
             </RadioGroup>
 
             <Button
-                android:id="@+id/show_answer_2"
+                android:id="@+id/show_answer_rum"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_vertical"
@@ -261,10 +265,10 @@
 
 
         <TextView
-            android:id="@+id/question_6"
+            android:id="@+id/mary_question"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/question_6_text" />
+            android:text="@string/mary_question_text" />
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -272,37 +276,38 @@
             android:orientation="horizontal">
 
             <RadioGroup
+                android:id="@+id/group_mary"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="2">
 
                 <RadioButton
-                    android:id="@+id/check_6a"
+                    android:id="@+id/radio_tomato"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@string/answer_6_a" />
+                    android:text="@string/mary_answer_1" />
 
                 <RadioButton
-                    android:id="@+id/check_6b"
+                    android:id="@+id/radio_chili"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@string/answer_6_b" />
+                    android:text="@string/mary_answer_2" />
 
                 <RadioButton
-                    android:id="@+id/check_6c"
+                    android:id="@+id/radio_cucumber"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@string/answer_6_c" />
+                    android:text="@string/mary_answer_3" />
 
                 <RadioButton
-                    android:id="@+id/check_6d"
+                    android:id="@+id/radio_carrot"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@string/answer_6_d" />
+                    android:text="@string/mary_answer_4" />
             </RadioGroup>
 
             <Button
-                android:id="@+id/show_answer_6"
+                android:id="@+id/show_answer_mary"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_vertical"
@@ -313,10 +318,10 @@
         </LinearLayout>
 
         <TextView
-            android:id="@+id/question_7"
+            android:id="@+id/wine_question"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/question_7_text" />
+            android:text="@string/wine_question_text" />
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -324,37 +329,38 @@
             android:orientation="horizontal">
 
             <RadioGroup
+                android:id="@+id/group_wine"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="2">
 
                 <RadioButton
-                    android:id="@+id/check_7a"
+                    android:id="@+id/radio_france"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@string/answer_7_a" />
+                    android:text="@string/wine_answer_1" />
 
                 <RadioButton
-                    android:id="@+id/check_7b"
+                    android:id="@+id/radio_vatican"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@string/answer_7_b" />
+                    android:text="@string/wine_answer_2" />
 
                 <RadioButton
-                    android:id="@+id/check_7c"
+                    android:id="@+id/radio_croatia"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@string/answer_7_c" />
+                    android:text="@string/wine_answer_3" />
 
                 <RadioButton
-                    android:id="@+id/check_7d"
+                    android:id="@+id/radio_italy"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@string/answer_7_d" />
+                    android:text="@string/wine_answer_4" />
             </RadioGroup>
 
             <Button
-                android:id="@+id/show_answer_7"
+                android:id="@+id/show_answer_wine"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_vertical"
