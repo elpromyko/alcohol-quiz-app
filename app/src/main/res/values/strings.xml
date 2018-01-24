@@ -36,4 +36,6 @@
     <string name="show_answer_button">answer</string>
     <string name="submit_button">submit answers</string>
     <string name="reset_button">reset</string>
+    <string name="bond_correct_answer">Must be vodka and shaken</string>
+    <string name="pisco_correect_name">Chile and Peru</string>
 </resources>
