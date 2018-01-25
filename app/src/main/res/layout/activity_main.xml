@@ -1,14 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/scrollView"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:id="@+id/scrollView">
+    android:background="@color/yellow"
+    android:padding="2dp"
+    android:orientation="vertical">
 
     <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
         xmlns:app="http://schemas.android.com/apk/res-auto"
         xmlns:tools="http://schemas.android.com/tools"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:background="@color/brown_2"
         android:orientation="vertical"
         android:padding="10dp"
         tools:context="com.example.android.alcoholquizapp.MainActivity">
@@ -17,84 +21,105 @@
             android:id="@+id/bond_question"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/bond_question_text" />
+            android:text="@string/bond_question_text"
+            android:textColor="@color/yellow" />
 
         <!-- Mulitple choice layout -->
         <LinearLayout
+            android:id="@+id/lay1"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:paddingBottom="@dimen/bottom_padding">
 
-            android:orientation="horizontal">
+            <ImageView
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="2"
+                android:src="@drawable/bond" />
 
             <LinearLayout
-                android:focusable="true"
-                android:focusableInTouchMode="true"
                 android:id="@+id/group_bond"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_weight="2"
-                android:orientation="vertical">
+                android:layout_weight="3"
+                android:focusable="true"
+                android:focusableInTouchMode="true"
+                android:orientation="vertical"
+                android:theme="@style/MyCheckBoxStyle">
 
                 <CheckBox
-                    android:enabled="true"
-                    android:checked="false"
                     android:id="@+id/check_vodka"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@string/bond_answer_1" />
+                    android:checked="false"
+                    android:enabled="true"
+                    android:text="@string/bond_answer_1"
+                    android:theme="@style/MyCheckBoxStyle" />
 
                 <CheckBox
-                    android:enabled="true"
-                    android:checked="false"
                     android:id="@+id/check_gin"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:checked="false"
+                    android:enabled="true"
                     android:text="@string/bond_answer_2" />
 
                 <CheckBox
-                    android:enabled="true"
-                    android:checked="false"
                     android:id="@+id/check_stirred"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:checked="false"
+                    android:enabled="true"
                     android:text="@string/bond_answer_3" />
 
                 <CheckBox
-                    android:enabled="true"
-                    android:checked="false"
                     android:id="@+id/check_shaken"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:checked="false"
+                    android:enabled="true"
                     android:text="@string/bond_answer_4" />
             </LinearLayout>
 
             <Button
-                android:tag="@string/bond_correct_answer"
+                android:layout_weight="0"
                 android:id="@+id/show_answer_bond"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_vertical"
-                android:layout_margin="20dp"
+                android:layout_margin="5dp"
                 android:onClick="viewAnswer"
+                android:tag="@string/bond_correct_answer"
                 android:text="@string/show_answer_button"
                 android:visibility="invisible" />
 
         </LinearLayout>
+
         <TextView
             android:id="@+id/whisky_question"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/whisky_question_text" />
+
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="horizontal">
+            android:orientation="horizontal"
+            android:paddingBottom="@dimen/bottom_padding">
+
+            <ImageView
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="2"
+                android:src="@drawable/whisky" />
 
             <RadioGroup
                 android:id="@+id/group_whisky"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_weight="2">
+                android:layout_weight="3"
+                android:theme="@style/MyRadioButtonStyle">
 
                 <RadioButton
                     android:id="@+id/radio_poland"
@@ -109,31 +134,27 @@
                     android:text="@string/whisky_answer_2" />
 
                 <RadioButton
-                    android:id="@+id/radio_scotland"
+                    android:id="@+id/radio_japan"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="@string/whisky_answer_3" />
 
                 <RadioButton
-                    android:id="@+id/radio_japan"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="@string/whisky_answer_4" />
-                <RadioButton
                     android:id="@+id/radio_all_countries"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@string/whisky_answer_5" />
+                    android:text="@string/whisky_answer_4" />
             </RadioGroup>
 
             <Button
-                android:tag="@string/whisky_answer_5"
                 android:id="@+id/show_answer_whisky"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_vertical"
-                android:layout_margin="20dp"
+                android:layout_margin="5dp"
+                android:layout_weight="0"
                 android:onClick="viewAnswer"
+                android:tag="@string/whisky_answer_4"
                 android:text="@string/show_answer_button"
                 android:visibility="invisible" />
         </LinearLayout>
@@ -148,42 +169,91 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="horizontal">
+            android:orientation="horizontal"
+            android:paddingBottom="@dimen/bottom_padding">
 
-            <EditText
-                android:id="@+id/spirit_name"
+            <ImageView
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="2"
+                android:src="@drawable/london" />
+
+            <LinearLayout
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_weight="2"
-                android:hint="@string/question_hint" />
+                android:layout_weight="3"
+                android:orientation="vertical">
+
+                <RadioButton
+                    android:id="@+id/but"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/whisky_answer_2"
+                    android:visibility="invisible" />
+
+                <EditText
+                    android:id="@+id/spirit_name"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/question_hint"
+                    android:textColor="@color/light_blue"
+                    android:textColorHint="@color/light_blue"
+                    android:textStyle="italic"/>
+
+                <RadioButton
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/whisky_answer_1"
+                    android:visibility="invisible" />
+
+
+                <RadioButton
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/whisky_answer_3"
+                    android:visibility="invisible" />
+
+            </LinearLayout>
+
 
             <Button
-                android:tag="@string/bond_answer_2"
                 android:id="@+id/show_answer_gin"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_vertical"
-                android:layout_margin="20dp"
+                android:layout_margin="5dp"
                 android:onClick="viewAnswer"
+                android:tag="@string/bond_answer_2"
                 android:text="@string/show_answer_button"
                 android:visibility="invisible" />
         </LinearLayout>
+
+
         <TextView
             android:id="@+id/pisco_question"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/pisco_question_text" />
+
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="horizontal">
+            android:orientation="horizontal"
+            android:paddingBottom="@dimen/bottom_padding">
+
+            <ImageView
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="2"
+                android:src="@drawable/pisco" />
 
             <LinearLayout
                 android:id="@+id/group_pisco"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_weight="2"
-                android:orientation="vertical">
+                android:layout_weight="3"
+                android:orientation="vertical"
+                android:theme="@style/MyCheckBoxStyle">
 
                 <CheckBox
                     android:id="@+id/check_chile"
@@ -211,13 +281,13 @@
             </LinearLayout>
 
             <Button
-                android:tag="@string/pisco_correect_name"
                 android:id="@+id/show_answer_pisco"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_vertical"
-                android:layout_margin="20dp"
+                android:layout_margin="5dp"
                 android:onClick="viewAnswer"
+                android:tag="@string/pisco_correect_name"
                 android:text="@string/show_answer_button"
                 android:visibility="invisible" />
 
@@ -233,13 +303,21 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="horizontal">
+            android:orientation="horizontal"
+            android:paddingBottom="@dimen/bottom_padding">
+
+            <ImageView
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="2"
+                android:src="@drawable/rum" />
 
             <RadioGroup
                 android:id="@+id/group_rum"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_weight="2">
+                android:layout_weight="3"
+                android:theme="@style/MyRadioButtonStyle">
 
                 <RadioButton
                     android:id="@+id/radio_potatoes"
@@ -267,13 +345,13 @@
             </RadioGroup>
 
             <Button
-                android:tag="@string/rum_answer_3"
                 android:id="@+id/show_answer_rum"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_vertical"
-                android:layout_margin="20dp"
+                android:layout_margin="5dp"
                 android:onClick="viewAnswer"
+                android:tag="@string/rum_answer_3"
                 android:text="@string/show_answer_button"
                 android:visibility="invisible" />
         </LinearLayout>
@@ -288,13 +366,21 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="horizontal">
+            android:orientation="horizontal"
+            android:paddingBottom="@dimen/bottom_padding">
+
+            <ImageView
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="2"
+                android:src="@drawable/mary" />
 
             <RadioGroup
                 android:id="@+id/group_mary"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_weight="2">
+                android:layout_weight="3"
+                android:theme="@style/MyRadioButtonStyle">
 
                 <RadioButton
                     android:id="@+id/radio_tomato"
@@ -322,13 +408,13 @@
             </RadioGroup>
 
             <Button
-                android:tag="@string/mary_answer_1"
                 android:id="@+id/show_answer_mary"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_vertical"
-                android:layout_margin="20dp"
+                android:layout_margin="5dp"
                 android:onClick="viewAnswer"
+                android:tag="@string/mary_answer_1"
                 android:text="@string/show_answer_button"
                 android:visibility="invisible" />
         </LinearLayout>
@@ -342,13 +428,21 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="horizontal">
+            android:orientation="horizontal"
+            android:paddingBottom="@dimen/bottom_padding">
+
+            <ImageView
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="2"
+                android:src="@drawable/wine" />
 
             <RadioGroup
                 android:id="@+id/group_wine"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_weight="2">
+                android:layout_weight="3"
+                android:theme="@style/MyRadioButtonStyle">
 
                 <RadioButton
                     android:id="@+id/radio_france"
@@ -376,13 +470,13 @@
             </RadioGroup>
 
             <Button
-                android:tag="@string/wine_answer_2"
                 android:id="@+id/show_answer_wine"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_vertical"
-                android:layout_margin="20dp"
+                android:layout_margin="5dp"
                 android:onClick="viewAnswer"
+                android:tag="@string/wine_answer_2"
                 android:text="@string/show_answer_button"
                 android:visibility="invisible" />
         </LinearLayout>

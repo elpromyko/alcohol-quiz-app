@@ -21,9 +21,8 @@
     <string name="pisco_answer_4">Peru</string>
     <string name="whisky_answer_1">Poland</string>
     <string name="whisky_answer_2">Sweden</string>
-    <string name="whisky_answer_3">Scotland</string>
-    <string name="whisky_answer_4">Japan</string>
-    <string name="whisky_answer_5">All produce whisky</string>
+    <string name="whisky_answer_3">Japan</string>
+    <string name="whisky_answer_4">All produce it</string>
     <string name="mary_answer_1">tomato</string>
     <string name="mary_answer_2">chili pepper</string>
     <string name="mary_answer_3">cucumber</string>
@@ -32,10 +31,11 @@
     <string name="wine_answer_2">Vatican City</string>
     <string name="wine_answer_3">Croatia</string>
     <string name="wine_answer_4">Italy</string>
-    <string name="question_hint">Type spirit name</string>
+    <string name="question_hint">type spirit name</string>
     <string name="show_answer_button">answer</string>
     <string name="submit_button">submit answers</string>
     <string name="reset_button">reset</string>
     <string name="bond_correct_answer">Must be vodka and shaken</string>
     <string name="pisco_correect_name">Chile and Peru</string>
+    <dimen name="bottom_padding">10dp</dimen>
 </resources>
