@@ -29,6 +29,7 @@
         <item name="checkboxStyle">@style/MyCheckBoxStyle</item>
         <item name="radioButtonStyle">@style/MyRadioButtonStyle</item>
         <item name="buttonStyle">@style/MyButton</item>
+        <item name="android:textSize">16sp</item>
     </style>
 
 </resources>

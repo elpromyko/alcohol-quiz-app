@@ -1,5 +1,6 @@
 package com.example.android.alcoholquizapp;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.Gravity;
@@ -29,12 +30,71 @@ public class MainActivity extends AppCompatActivity {
     List<LinearLayout> groups;
     List<RadioButton> radioCorrectAnswers;
     TextView finalScore;
+    static final String WHISKY_STATE = "whiskyQuestion";
+    static final String WHISKY_GROUP_STATE = "whiskyGroup";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        groupWhisky = findViewById(R.id.group_whisky);
+        groupRum = findViewById(R.id.group_rum);
+        groupBond = findViewById(R.id.group_bond);
+        groupPisco = findViewById(R.id.group_pisco);
+        groupMary = findViewById(R.id.group_mary);
+        groupWine = findViewById(R.id.group_wine);
+        groups = Arrays.asList(groupWhisky, groupRum, groupMary, groupWine, groupBond, groupPisco);
+
+
+
     }
+// ===WORK IN PROGRESS===
+    @Override
+    public void onSaveInstanceState(Bundle savedInstanceState) {
+        // Save the user's current score state for both players
+//        groupWhisky.getChildAt(0).isEnabled();
+
+        savedInstanceState.putInt(WHISKY_STATE, groupWhisky.getCheckedRadioButtonId());
+        savedInstanceState.putBoolean(WHISKY_GROUP_STATE, groupWhisky.getChildAt(0).isEnabled());
+//        savedInstanceState.putBoolean("MyBoolean", true);
+//        savedInstanceState.putInt(PLAYER2_SCORE, scorePlayer2);
+
+        savedInstanceState.putInt("Score", Integer.parseInt(finalScore.getText().toString()));
+        savedInstanceState.putInt(finalScore.getVisibility()));
+
+
+        // Always call the superclass so it can save the view hierarchy state
+        super.onSaveInstanceState(savedInstanceState);
+    }
+
+    public void onRestoreInstanceState(Bundle savedInstanceState) {
+        // Always call the superclass so it can restore the view hierarchy
+        super.onRestoreInstanceState(savedInstanceState);
+
+
+        // Restore score states from saved instance and display them
+        groupWhisky.check(savedInstanceState.getInt(WHISKY_STATE));
+
+        for (LinearLayout group : groups) {
+            for (int i = 0; i < group.getChildCount(); i++) {
+                group.getChildAt(i).setEnabled(savedInstanceState.getBoolean(WHISKY_GROUP_STATE));
+            }
+        }
+
+
+
+//        savedInstanceState.getBoolean(WHISKY_GROUP_STATE);
+
+//        View butt = findViewById(groupWhisky.getCheckedRadioButtonId());
+//        butt.setEnabled(false);
+
+//        scorePlayer1 = savedInstanceState.getInt(PLAYER1_SCORE);
+//        scorePlayer2 = savedInstanceState.getInt(PLAYER2_SCORE);
+//        displayPlayer1Score(scorePlayer1);
+//        displayPlayer2Score(scorePlayer2);
+    }
+// =====END WIP=======
 
     public void submitAnswers(View view) {
 
@@ -69,17 +129,17 @@ public class MainActivity extends AppCompatActivity {
 
         userTypedAnswer = findViewById(R.id.spirit_name);
 
-        groupWhisky = findViewById(R.id.group_whisky);
-        groupBond = findViewById(R.id.group_bond);
-        groupPisco = findViewById(R.id.group_pisco);
-        groupRum = findViewById(R.id.group_rum);
-        groupMary = findViewById(R.id.group_mary);
-        groupWine = findViewById(R.id.group_wine);
+//        groupWhisky = findViewById(R.id.group_whisky);
+//        groupBond = findViewById(R.id.group_bond);
+//        groupPisco = findViewById(R.id.group_pisco);
+//        groupRum = findViewById(R.id.group_rum);
+//        groupMary = findViewById(R.id.group_mary);
+//        groupWine = findViewById(R.id.group_wine);
 
         answerButtons = Arrays.asList(bondAnswerButton, rumAnswerButton, ginAnswerButton,
                 whiskyAnswerButton, piscoAnswerButton, maryAnswerButton, wineAnswerButton);
 
-        groups = Arrays.asList(groupWhisky, groupRum, groupMary, groupWine, groupBond, groupPisco);
+//        groups = Arrays.asList(groupWhisky, groupRum, groupMary, groupWine, groupBond, groupPisco);
 
         radioCorrectAnswers = Arrays.asList(answerSugarcane, answerAllCountries, answerTomato, answerVatican);
 
@@ -110,7 +170,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void displayFinalScore(int score) {
-        finalScore.setText("SCORE " + score);
+        finalScore.setText("SCORE: " + score + "/7");
     }
 
     public void changeButtonState(boolean state) {
@@ -123,9 +183,9 @@ public class MainActivity extends AppCompatActivity {
             btn.setVisibility(View.VISIBLE);
         }
 
-        for (LinearLayout grp : groups) {
-            for (int i = 0; i < grp.getChildCount(); i++) {
-                grp.getChildAt(i).setEnabled(state);
+        for (LinearLayout group : groups) {
+            for (int i = 0; i < group.getChildCount(); i++) {
+                group.getChildAt(i).setEnabled(state);
             }
         }
 
@@ -148,6 +208,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void reset(View view) {
-        setContentView(R.layout.activity_main);
+        Intent intent = new Intent(this, MainActivity.class);
+        startActivity(intent);
     }
 }
