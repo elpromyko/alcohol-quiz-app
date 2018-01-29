@@ -1,12 +1,12 @@
 <resources>
     <string name="app_name">Alcohol Quiz App</string>
-    <string name="bond_question_text">1) James Bond would ask for what kind of martini</string>
+    <string name="bond_question_text">1) What kind of Martini James Bond would ask for?</string>
     <string name="rum_question_text">5) Rum is distilled from:</string>
-    <string name="gin_question_text">3) Which spirit is traditionally made of juniper berries and drunk in England?</string>
+    <string name="gin_question_text">3) Which spirit is traditionally made of juniper berries and drunk mainly in England?</string>
     <string name="pisco_question_text">4) Pisco is a national alcohol of:</string>
     <string name="whisky_question_text">2) Which of these countries does not produce whisky:</string>
-    <string name="mary_question_text">6) What ingredient makes bloody mary cocktail color</string>
-    <string name="wine_question_text">7) The biggest wine consumer per capita in Europe 2017</string>
+    <string name="mary_question_text">6) What ingredient gives Bloody Mary cocktail a specific color?</string>
+    <string name="wine_question_text">7) The biggest wine consumer per capita in Europe in 2017 was:</string>
     <string name="bond_answer_1">vodka</string>
     <string name="bond_answer_2">gin</string>
     <string name="bond_answer_3">stirred</string>
@@ -37,6 +37,9 @@
     <string name="reset_button">reset</string>
     <string name="bond_correct_answer">Must be vodka and shaken</string>
     <string name="pisco_correect_name">Chile and Peru</string>
-    <dimen name="bottom_padding">10dp</dimen>
-    <dimen name="top_padding">10dp</dimen>
+    <string name="title">alcohol quiz</string>
+    <dimen name="scroll_view_padding">2dp</dimen>
+    <dimen name="padding">10dp</dimen>
+    <dimen name="margin">5dp</dimen>
+    <dimen name="big_text_size">22sp</dimen>
 </resources>

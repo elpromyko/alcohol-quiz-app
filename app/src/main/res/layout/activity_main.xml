@@ -5,7 +5,7 @@
     android:layout_height="match_parent"
     android:background="@color/yellow"
     android:orientation="vertical"
-    android:padding="2dp">
+    android:padding="@dimen/scroll_view_padding">
 
     <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
         xmlns:app="http://schemas.android.com/apk/res-auto"
@@ -13,22 +13,22 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="@color/brown_2"
-        android:orientation="vertical"
-        android:padding="10dp"
-        tools:context="com.example.android.alcoholquizapp.MainActivity"
         android:focusable="true"
-        android:focusableInTouchMode="true">
+        android:focusableInTouchMode="true"
+        android:orientation="vertical"
+        android:padding="@dimen/padding"
+        tools:context="com.example.android.alcoholquizapp.MainActivity">
 
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="5dp"
-            android:layout_marginTop="5dp"
+            android:layout_marginBottom="@dimen/margin"
+            android:layout_marginTop="@dimen/margin"
             android:gravity="center_horizontal"
-            android:text="alcohol quiz"
+            android:text="@string/title"
             android:textAllCaps="true"
             android:textColor="@color/orange_2"
-            android:textSize="22sp"
+            android:textSize="@dimen/big_text_size"
             android:textStyle="bold" />
 
         <TextView
@@ -38,14 +38,12 @@
             android:text="@string/bond_question_text"
             android:textColor="@color/yellow" />
 
-        <!-- Mulitple choice layout -->
         <LinearLayout
-            android:id="@+id/lay1"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
-            android:paddingBottom="@dimen/bottom_padding"
-            android:paddingTop="@dimen/top_padding">
+            android:paddingBottom="@dimen/padding"
+            android:paddingTop="@dimen/padding">
 
             <ImageView
                 android:layout_width="0dp"
@@ -100,7 +98,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_vertical"
-                android:layout_margin="5dp"
+                android:layout_margin="@dimen/margin"
                 android:layout_weight="0"
                 android:onClick="viewAnswer"
                 android:tag="@string/bond_correct_answer"
@@ -119,8 +117,8 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
-            android:paddingBottom="@dimen/bottom_padding"
-            android:paddingTop="@dimen/top_padding">
+            android:paddingBottom="@dimen/padding"
+            android:paddingTop="@dimen/padding">
 
             <ImageView
                 android:layout_width="0dp"
@@ -165,7 +163,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_vertical"
-                android:layout_margin="5dp"
+                android:layout_margin="@dimen/margin"
                 android:layout_weight="0"
                 android:onClick="viewAnswer"
                 android:tag="@string/whisky_answer_4"
@@ -184,8 +182,8 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
-            android:paddingBottom="@dimen/bottom_padding"
-            android:paddingTop="@dimen/top_padding">
+            android:paddingBottom="@dimen/padding"
+            android:paddingTop="@dimen/padding">
 
             <ImageView
                 android:layout_width="0dp"
@@ -236,7 +234,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_vertical"
-                android:layout_margin="5dp"
+                android:layout_margin="@dimen/margin"
                 android:onClick="viewAnswer"
                 android:tag="@string/bond_answer_2"
                 android:text="@string/show_answer_button"
@@ -254,8 +252,8 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
-            android:paddingBottom="@dimen/bottom_padding"
-            android:paddingTop="@dimen/top_padding">
+            android:paddingBottom="@dimen/padding"
+            android:paddingTop="@dimen/padding">
 
             <ImageView
                 android:layout_width="0dp"
@@ -301,7 +299,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_vertical"
-                android:layout_margin="5dp"
+                android:layout_margin="@dimen/margin"
                 android:onClick="viewAnswer"
                 android:tag="@string/pisco_correect_name"
                 android:text="@string/show_answer_button"
@@ -315,13 +313,12 @@
             android:layout_height="wrap_content"
             android:text="@string/rum_question_text" />
 
-        <!-- Radio layout -->
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
-            android:paddingBottom="@dimen/bottom_padding"
-            android:paddingTop="@dimen/top_padding">
+            android:paddingBottom="@dimen/padding"
+            android:paddingTop="@dimen/padding">
 
             <ImageView
                 android:layout_width="0dp"
@@ -366,7 +363,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_vertical"
-                android:layout_margin="5dp"
+                android:layout_margin="@dimen/margin"
                 android:onClick="viewAnswer"
                 android:tag="@string/rum_answer_3"
                 android:text="@string/show_answer_button"
@@ -384,8 +381,8 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
-            android:paddingBottom="@dimen/bottom_padding"
-            android:paddingTop="@dimen/top_padding">
+            android:paddingBottom="@dimen/padding"
+            android:paddingTop="@dimen/padding">
 
             <ImageView
                 android:layout_width="0dp"
@@ -430,7 +427,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_vertical"
-                android:layout_margin="5dp"
+                android:layout_margin="@dimen/margin"
                 android:onClick="viewAnswer"
                 android:tag="@string/mary_answer_1"
                 android:text="@string/show_answer_button"
@@ -446,9 +443,10 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/margin"
             android:orientation="horizontal"
-            android:paddingBottom="@dimen/bottom_padding"
-            android:paddingTop="@dimen/top_padding">
+            android:paddingBottom="@dimen/padding"
+            android:paddingTop="@dimen/padding">
 
             <ImageView
                 android:layout_width="0dp"
@@ -493,7 +491,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_vertical"
-                android:layout_margin="5dp"
+                android:layout_margin="@dimen/margin"
                 android:onClick="viewAnswer"
                 android:tag="@string/wine_answer_2"
                 android:text="@string/show_answer_button"
@@ -504,26 +502,27 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_marginTop="10dp"
+            android:layout_marginBottom="@dimen/margin"
+            android:layout_marginTop="@dimen/margin"
             android:orientation="horizontal">
 
             <TextView
                 android:id="@+id/final_score"
-                android:layout_width="wrap_content"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_vertical"
                 android:layout_weight="1"
                 android:text=""
                 android:textColor="@color/orange_2"
-                android:textSize="22sp"
+                android:textSize="@dimen/big_text_size"
                 android:textStyle="bold"
-                android:visibility="invisible"/>
+                android:visibility="invisible" />
 
             <Button
                 android:id="@+id/reset_button"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_margin="5dp"
+                android:layout_margin="@dimen/margin"
                 android:onClick="reset"
                 android:text="@string/reset_button"
                 android:textColor="@color/orange_2"
@@ -536,7 +535,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
-            android:layout_marginTop="10dp"
+            android:layout_marginTop="@dimen/margin"
             android:onClick="submitAnswers"
             android:text="@string/submit_button" />
 
