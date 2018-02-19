@@ -152,7 +152,7 @@ public class MainActivity extends AppCompatActivity {
             if ((answerChile.isChecked()) && (answerPeru.isChecked())) score++;
         }
 
-        if (userTypedAnswer.getText().toString().equalsIgnoreCase(getResources().getString(R.string.bond_answer_2)))
+        if (userTypedAnswer.getText().toString().trim().equalsIgnoreCase(getResources().getString(R.string.bond_answer_2)))
             score++;
 
         for (RadioButton correctAnswer : radioCorrectAnswers) {
@@ -163,6 +163,13 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void displayFinalScore(int score) {
+        if ((score >= 0) && (score < 7)) {
+            Toast toast = Toast.makeText(this, "Not bad. Try again. You scored  " + String.valueOf(score), Toast.LENGTH_SHORT);
+            toast.show();
+        } else {
+            Toast toast = Toast.makeText(this, "You got it all right! You scored " + String.valueOf(score), Toast.LENGTH_SHORT);
+            toast.show();
+        }
         finalScore.setText(String.format("SCORE: %d/7", score));
         finalScore.setVisibility(View.VISIBLE);
     }
