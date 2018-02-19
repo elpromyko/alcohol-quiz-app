@@ -38,6 +38,13 @@
     <string name="bond_correct_answer">Must be vodka and shaken</string>
     <string name="pisco_correect_name">Chile and Peru</string>
     <string name="title">alcohol quiz</string>
+    <string name="poster1">James Bond - Dr No poster</string>
+    <string name="poster2">Whisky Gilby poster</string>
+    <string name="poster3">London poster</string>
+    <string name="poster4">Pisco sour cocktail poster</string>
+    <string name="poster5">Pirate of the Caribbean poster</string>
+    <string name="poster6">Beach bar poster</string>
+    <string name="poster7">Wine bottle and a glass poster</string>
     <dimen name="scroll_view_padding">2dp</dimen>
     <dimen name="padding">10dp</dimen>
     <dimen name="margin">5dp</dimen>

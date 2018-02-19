@@ -8,7 +8,6 @@
     android:padding="@dimen/scroll_view_padding">
 
     <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-        xmlns:app="http://schemas.android.com/apk/res-auto"
         xmlns:tools="http://schemas.android.com/tools"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -49,6 +48,7 @@
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="2"
+                android:contentDescription="@string/poster1"
                 android:src="@drawable/bond" />
 
             <LinearLayout
@@ -124,6 +124,7 @@
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="2"
+                android:contentDescription="@string/poster2"
                 android:src="@drawable/whisky" />
 
             <RadioGroup
@@ -189,6 +190,7 @@
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="2"
+                android:contentDescription="@string/poster3"
                 android:src="@drawable/london" />
 
             <LinearLayout
@@ -259,6 +261,7 @@
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="2"
+                android:contentDescription="@string/poster4"
                 android:src="@drawable/pisco" />
 
             <LinearLayout
@@ -324,6 +327,7 @@
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="2"
+                android:contentDescription="@string/poster5"
                 android:src="@drawable/rum" />
 
             <RadioGroup
@@ -388,6 +392,7 @@
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="2"
+                android:contentDescription="@string/poster6"
                 android:src="@drawable/mary" />
 
             <RadioGroup
@@ -452,6 +457,7 @@
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="2"
+                android:contentDescription="@string/poster7"
                 android:src="@drawable/wine" />
 
             <RadioGroup
