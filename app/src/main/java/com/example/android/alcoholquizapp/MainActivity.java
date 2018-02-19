@@ -18,38 +18,6 @@ import java.util.Arrays;
 import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
-    private CheckBox answerVodka;
-    private CheckBox answerGin;
-    private CheckBox answerStirred;
-    private CheckBox answerShaken;
-    private CheckBox answerChile;
-    private CheckBox answerBolivia;
-    private CheckBox answerBrazil;
-    private CheckBox answerPeru;
-    private RadioButton answerSugarcane;
-    private RadioButton answerAllCountries;
-    private RadioButton answerTomato;
-    private RadioButton  answerVatican;
-    private EditText userTypedAnswer;
-    private Button submitButton;
-    private Button resetButton;
-    private Button bondAnswerButton;
-    private Button rumAnswerButton;
-    private Button ginAnswerButton;
-    private Button whiskyAnswerButton;
-    private Button piscoAnswerButton;
-    private Button maryAnswerButton;
-    private Button wineAnswerButton;
-    private RadioGroup groupWhisky;
-    private RadioGroup groupRum;
-    private RadioGroup groupMary;
-    private RadioGroup groupWine;
-    private LinearLayout groupBond;
-    private LinearLayout groupPisco;
-    private List<Button> answerButtons;
-    private List<LinearLayout> groups;
-    private List<RadioButton> radioCorrectAnswers;
-    private TextView finalScore;
     static final String WHISKY_GROUP_STATE = "whiskyGroup";
     static final String SCORE = "score";
     static final String SCORE_VISIBILITY = "scoreVisibility";
@@ -58,6 +26,23 @@ public class MainActivity extends AppCompatActivity {
     static final String SUBMIT_STATE = "submitButtonState";
     static final String USER_ANSWER_STATE = "userTypedAnswerState";
     static final String USER_ANSWER_FOCUSABLE = "userAnswerFocusable";
+    private CheckBox answerVodka;
+    private CheckBox answerGin;
+    private CheckBox answerStirred;
+    private CheckBox answerShaken;
+    private CheckBox answerChile;
+    private CheckBox answerBolivia;
+    private CheckBox answerBrazil;
+    private CheckBox answerPeru;
+    private EditText userTypedAnswer;
+    private Button submitButton;
+    private Button resetButton;
+    private Button bondAnswerButton;
+    private RadioGroup groupWhisky;
+    private List<Button> answerButtons;
+    private List<LinearLayout> groups;
+    private List<RadioButton> radioCorrectAnswers;
+    private TextView finalScore;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -110,22 +95,22 @@ public class MainActivity extends AppCompatActivity {
 
         // groups of answers
         groupWhisky = findViewById(R.id.group_whisky);
-        groupRum = findViewById(R.id.group_rum);
-        groupBond = findViewById(R.id.group_bond);
-        groupPisco = findViewById(R.id.group_pisco);
-        groupMary = findViewById(R.id.group_mary);
-        groupWine = findViewById(R.id.group_wine);
+        RadioGroup groupRum = findViewById(R.id.group_rum);
+        LinearLayout groupBond = findViewById(R.id.group_bond);
+        LinearLayout groupPisco = findViewById(R.id.group_pisco);
+        RadioGroup groupMary = findViewById(R.id.group_mary);
+        RadioGroup groupWine = findViewById(R.id.group_wine);
 
         // buttons
         submitButton = findViewById(R.id.submit_button);
         resetButton = findViewById(R.id.reset_button);
         bondAnswerButton = findViewById(R.id.show_answer_bond);
-        rumAnswerButton = findViewById(R.id.show_answer_rum);
-        ginAnswerButton = findViewById(R.id.show_answer_gin);
-        whiskyAnswerButton = findViewById(R.id.show_answer_whisky);
-        piscoAnswerButton = findViewById(R.id.show_answer_pisco);
-        maryAnswerButton = findViewById(R.id.show_answer_mary);
-        wineAnswerButton = findViewById(R.id.show_answer_wine);
+        Button rumAnswerButton = findViewById(R.id.show_answer_rum);
+        Button ginAnswerButton = findViewById(R.id.show_answer_gin);
+        Button whiskyAnswerButton = findViewById(R.id.show_answer_whisky);
+        Button piscoAnswerButton = findViewById(R.id.show_answer_pisco);
+        Button maryAnswerButton = findViewById(R.id.show_answer_mary);
+        Button wineAnswerButton = findViewById(R.id.show_answer_wine);
 
         // checkboxes
         answerVodka = findViewById(R.id.check_vodka);
@@ -138,10 +123,10 @@ public class MainActivity extends AppCompatActivity {
         answerPeru = findViewById(R.id.check_peru);
 
         // correct radio
-        answerAllCountries = findViewById(R.id.radio_all_countries);
-        answerSugarcane = findViewById(R.id.radio_cane);
-        answerTomato = findViewById(R.id.radio_tomato);
-        answerVatican = findViewById(R.id.radio_vatican);
+        RadioButton answerAllCountries = findViewById(R.id.radio_all_countries);
+        RadioButton answerSugarcane = findViewById(R.id.radio_cane);
+        RadioButton answerTomato = findViewById(R.id.radio_tomato);
+        RadioButton answerVatican = findViewById(R.id.radio_vatican);
 
         // lists
         answerButtons = Arrays.asList(bondAnswerButton, rumAnswerButton, ginAnswerButton,
@@ -159,15 +144,16 @@ public class MainActivity extends AppCompatActivity {
     public int calculateScore() {
         int score = 0;
 
-        if ((! answerGin.isChecked()) && (! answerStirred.isChecked())) {
+        if ((!answerGin.isChecked()) && (!answerStirred.isChecked())) {
             if ((answerVodka.isChecked()) && (answerShaken.isChecked())) score++;
         }
 
-        if ((! answerBolivia.isChecked()) && (! answerBrazil.isChecked())) {
+        if ((!answerBolivia.isChecked()) && (!answerBrazil.isChecked())) {
             if ((answerChile.isChecked()) && (answerPeru.isChecked())) score++;
         }
 
-        if (userTypedAnswer.getText().toString().equalsIgnoreCase(getResources().getString(R.string.bond_answer_2))) score++;
+        if (userTypedAnswer.getText().toString().equalsIgnoreCase(getResources().getString(R.string.bond_answer_2)))
+            score++;
 
         for (RadioButton correctAnswer : radioCorrectAnswers) {
             if (correctAnswer.isChecked()) score++;
@@ -202,7 +188,7 @@ public class MainActivity extends AppCompatActivity {
     // Shows toast message below button with button tag dependant text
     public void viewAnswer(View view) {
         String correctAnswer = "";
-        int location[]=new int[2];
+        int location[] = new int[2];
 
         for (Button btn : answerButtons) {
             if (view.getId() == btn.getId()) {
@@ -212,7 +198,7 @@ public class MainActivity extends AppCompatActivity {
 
         view.getLocationOnScreen(location);
         Toast toast = Toast.makeText(this, correctAnswer, Toast.LENGTH_SHORT);
-        toast.setGravity(Gravity.TOP|Gravity.START, location[0], location[1]+90);
+        toast.setGravity(Gravity.TOP | Gravity.START, location[0], location[1] + 90);
         toast.show();
     }
 
